@@ -1,5 +1,5 @@
 # devkook's rest in jetty
-간단하게 REST 기반 API 서비스를 제공하기 위하여! 건배~ 
+간단하게 REST 기반 API 서비스를 제공하기 위하여! 지화자/얼씨구/잘한다/좋다
 
 #### RUN
 * mvn install

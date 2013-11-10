@@ -1,15 +1,13 @@
 #devkook's rest in jetty
-[devkook tumblr 방문하기](http://devkook.tumblr.com/post/66513954679/jetty-rest)
+간단하게 REST 기반 API 서비스를 제공하기 위하여! 건배~ 
 
 ##RUN
-* JettyLauncher 를 실행시킵니다.
-* 그러면 ... http://localhost:1318/ 서비스가 활성화 됩니다.
+* mvn install
+* JerseyJettyLauncher 를 실행하면 jetty server 가 실행됩니다. 
 
-##TEST
-* 피타고라스 아저씨에게 질문 하기.
-* http://localhost:1318/Pythagoras?question=101plus102 이렇게요.
-
-![Pythagoras](http://www.hermes-press.com/Pythagoras-Knapp.gif)
-
-
+##TEST - "Advanced rest client"를 크롭스토어에서 받아서 사용합니다.
+* http://localhost/api/user/whoau, POST - If you're curious, 500 won : ) http://devkook.tumbrl.com
+* http://localhost:8765/api/user/getUser, GET - { name: "devkook" age: 0 }
+* http://localhost:8765/api/user/setUser, POST, name:devin cook, age 53 - { name: "devin cook" age: 53 }
+* http://localhost:8765/api/user/getUser, GET - { name: "devin cook" age: 53 }
 

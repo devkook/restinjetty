@@ -10,12 +10,17 @@ import org.eclipse.jetty.server.handler.AbstractHandler;
 
 public class JettyLauncher extends AbstractHandler {
 
-    public static void main(String[] args) throws Exception {
-        Server server = new Server(1318);
-        server.setHandler(new JettyLauncher());
+    public static void main(String[] args) {
+        
+        try{
+            Server server = new Server(1318);
+            server.setHandler(new JettyLauncher());
 
-        server.start();
-        server.join();
+            server.start();
+            server.join();
+        }catch(Exception e){
+            System.out.println("START Exception:"+e);
+        }        
     }
 
     public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

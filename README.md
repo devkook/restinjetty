@@ -1,15 +1,18 @@
-#devkook's rest in jetty
-[devkook tumblr 방문하기](http://devkook.tumblr.com/post/66513954679/jetty-rest)
+# devkook's rest in jetty
+간단하게 REST 기반 API 서비스를 제공하기 위하여! 지화자/얼씨구/잘한다/좋다
 
-##RUN
-* JettyLauncher 를 실행시킵니다.
-* 그러면 ... http://localhost:1318/ 서비스가 활성화 됩니다.
+#### RUN
+* mvn install
+* JerseyJettyLauncher 를 실행하면 jetty server 가 실행 되구요. 그담은 테스트
 
-##TEST
-* 피타고라스 아저씨에게 질문 하기.
-* http://localhost:1318/Pythagoras?question=101plus102 이렇게요.
+#### TEST - "Advanced rest client"를 이용
+* http://localhost/api/user/whoau, POST - If you're curious, 500 won : ) http://devkook.tumbrl.com
+* http://localhost:8765/api/user/getUser, GET - { name: "devkook" age: 0 }
+* http://localhost:8765/api/user/setUser, POST, name:devin cook, age 53 - { name: "devin cook" age: 53 }
+* http://localhost:8765/api/user/getUser, GET - { name: "devin cook" age: 53 }
 
-![Pythagoras](http://www.hermes-press.com/Pythagoras-Knapp.gif)
-
-
+#### CODE
+* JerseyJettyLauncher.java - jetty 서버를 설정하고 실행합니다.
+* UserCertificateResource.java - REST 서비스를 제공합니다. 
+* UserVO.java - JSON 으로 변환되어 서비스에서 오고가는 정보입니다.
 

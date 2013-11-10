@@ -9,10 +9,14 @@ import com.sun.jersey.spi.container.servlet.ServletContainer;
 
 public class JerseyJettyLauncher {
     private Server server;
+    private int port;
     
     public static void main(String[] args) {
         JerseyJettyLauncher launcher = new JerseyJettyLauncher();
+        launcher.port = Integer.parseInt(System.getProperty("port", "8765"));
+        
         try {
+            
             launcher.start();
         } catch (IOException e) {
             e.printStackTrace();
@@ -31,7 +35,7 @@ public class JerseyJettyLauncher {
 
     protected Server createJettyServer() {
         String myrestpackage = "devkook.study.rest";
-        Server server = new Server(8765);
+        Server server = new Server(this.port);
         
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/api");

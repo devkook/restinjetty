@@ -2,8 +2,8 @@
 간단하게 REST 기반 API 서비스를 제공하기 위하여! 지화자/얼씨구/잘한다/좋다
 
 #### RUN
-* mvn install
-* JerseyJettyLauncher 를 실행하면 jetty server 가 실행 되구요. 그담은 테스트
+* mvn clean compile exec:java - JerseyJettyLauncher 를 통해 jetty server 가 실행 되구요. 그 담은 테스트
+* mvn assembly:assembly 로 하나로 묶어서 아래 java -Dport=8443 -jar jetty-jar-with-dependencies.jar 와 같이 서비스를 하면 됩니다.
 
 #### TEST - "Advanced rest client"를 이용
 * http://localhost/api/user/whoau, POST - If you're curious, 500 won : ) http://devkook.tumbrl.com
@@ -15,4 +15,9 @@
 * JerseyJettyLauncher.java - jetty 서버를 설정하고 실행합니다.
 * UserCertificateResource.java - REST 서비스를 제공합니다. 
 * UserVO.java - JSON 으로 변환되어 서비스에서 오고가는 정보입니다.
+
+
+mvn clean compile exec:java 로 실행
+mvn assembly:assembly 로 하나로 묶어서 아래와 같이 실행
+
 

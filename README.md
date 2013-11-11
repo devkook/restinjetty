@@ -1,6 +1,12 @@
 # devkook's rest in jetty
 간단하게 REST 기반 API 서비스를 제공하기 위하여! 지화자/얼씨구/잘한다/좋다
 
+#### GET
+* git clone 
+* mvn eclipse:eclipse
+* Eclipse 에서 import Existin Projects into Workspace 를 이용하여 불러오기
+
+
 #### RUN
 * mvn clean compile exec:java - JerseyJettyLauncher 를 통해 jetty server 가 실행 되구요. 그 담은 테스트
 * mvn assembly:assembly 로 하나로 묶어서 아래 java -Dport=8443 -jar jetty-jar-with-dependencies.jar 와 같이 서비스를 하면 됩니다.

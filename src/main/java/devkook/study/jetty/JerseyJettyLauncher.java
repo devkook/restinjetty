@@ -13,7 +13,7 @@ public class JerseyJettyLauncher {
     
     public static void main(String[] args) {
         JerseyJettyLauncher launcher = new JerseyJettyLauncher();
-        launcher.port = Integer.parseInt(System.getProperty("port", "8765"));
+        launcher.port = Integer.parseInt(System.getProperty("port", "7788"));
         
         try {
             

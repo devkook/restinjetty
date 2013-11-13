@@ -23,7 +23,3 @@
 * UserVO.java - JSON 으로 변환되어 서비스에서 오고가는 정보입니다.
 
 
-mvn clean compile exec:java 로 실행
-mvn assembly:assembly 로 하나로 묶어서 아래와 같이 실행
-
-

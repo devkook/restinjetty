@@ -12,6 +12,8 @@
 * mvn assembly:assembly 로 하나로 묶어서 아래 java -Dport=8443 -jar jetty-jar-with-dependencies.jar 와 같이 서비스를 하면 됩니다.
 
 #### TEST - "Advanced rest client"를 이용
+* http://localhost:8765/api/SatelliteTower/ping - 우주시간 출력
+* 
 * http://localhost/api/user/whoau, POST - If you're curious, 500 won : ) http://devkook.tumbrl.com
 * http://localhost:8765/api/user/getUser, GET - { name: "devkook" age: 0 }
 * http://localhost:8765/api/user/setUser, POST, name:devin cook, age 53 - { name: "devin cook" age: 53 }

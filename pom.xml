@@ -47,8 +47,22 @@
 
 	</dependencies>
 	<build>
-		<finalName>jetty</finalName>
+		<finalName>${artifactId}</finalName>
+
 		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>${jettyLauncherMain}</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
@@ -88,7 +102,7 @@
 					</archive>
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 	</build>
 	<description>코드만으로 REST 서비스 제공하기</description>

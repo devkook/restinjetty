@@ -58,8 +58,31 @@
 					<archive>
 						<manifest>
 							<mainClass>${jettyLauncherMain}</mainClass>
+							<!-- jar 파일 안의 META-INF/MANIFEST.MF 에 classpath 정보가 추가됨 -->
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
 						</manifest>
 					</archive>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- eclipse 에서는 target 밑의 lib 에 생성 됨 -->
+					<outputDirectory>target/lib</outputDirectory>
+					<overWriteIfNewer>true</overWriteIfNewer>
 				</configuration>
 			</plugin>
 

@@ -9,7 +9,8 @@
 
 #### RUN
 * mvn clean compile exec:java 라고 명령하면 jetty server 가 실행 되구요. 그 담은 테스트
-* mvn assembly:assembly 로 하나로 묶어서 아래 java -Dport=8443 -jar jetty-jar-with-dependencies.jar 와 같이 서비스를 하면 됩니다.
+* mvn package 이후 target 폴더이동하여 java -Dport=8443 -jar restinjetty.jar 로 구동 
+* mvn assembly:assembly 로 하나로 묶어서 아래 java -Dport=8443 -jar jetty-jar-with-dependencies.jar 와 같이 서비스를 하면 됩니다. (오류 발생 - 문제 해결중)
 
 #### TEST - "Advanced rest client"를 이용
 * http://localhost:8765/api/SatelliteTower/ping - 우주시간 출력

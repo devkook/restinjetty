@@ -12,14 +12,26 @@
 * mvn package 이후 target 폴더이동하여 java -Dport=8443 -jar restinjetty.jar 로 구동 
 * mvn assembly:assembly 로 하나로 묶어서 아래 java -Dport=8443 -jar jetty-jar-with-dependencies.jar 와 같이 서비스를 하면 됩니다. (오류 발생 - 문제 해결중)
 
-#### TEST - "Advanced rest client"를 이용
-* http://localhost/api/user/whoau, POST - If you're curious, 500 won : ) http://devkook.tumbrl.com
+#### TEST - user - "Advanced rest client"를 이용
+* http://localhost:8765/api/user/whoau, POST - If you're curious, 500 won : ) http://devkook.tumbrl.com
 * http://localhost:8765/api/user/getUser, GET - { name: "devkook" age: 0 }
 * http://localhost:8765/api/user/setUser, POST, name:devin cook, age 53 - { name: "devin cook" age: 53 }
 * http://localhost:8765/api/user/getUser, GET - { name: "devin cook" age: 53 }
 
-### TEST - curl
+#### TEST - Contact
+* http://127.0.0.1:8765/api/Contact, POST (<Contact><email>meme@me.com</email><name>meme</name><phone>1004</phone></Contact>
+* http://127.0.0.1:8765/api/Contact/getUser, GET ( FROM 에 email, meme@me.com 입력 )
+* http://127.0.0.1:8765/api/Contact/meme@me.com, GET
+* http://127.0.0.1:8765/api/Contact/meme@me.com, PUT (<Contact><email>meme@me.com</email><name>MyMeMe</name><phone>1004-8282</phone></Contact>
+* * http://127.0.0.1:8765/api/Contact/meme@me.com, DELETE
+
+#### TEST - SatelliteTower
 * culr -X POST http://localhost:8765/api/SatelliteTower/ping - 우주시간 출력
+* http://localhost:8765/api/SatelliteTower/NARO50411131BIGBANG - GET {"launchKey":"NARO50411131BIGBANG","controlStation":"만휴정","name":"bigBANg"}
+* http://localhost:8765/api/SatelliteTower - POST {"launchKey":"NARO50411131BIGBANG-2","controlStation":"병산서원","name":"bigBANgAfter"}
+* http://localhost:8765/api/SatelliteTower/NARO50411131BIGBANG-2 - GET
+* http://localhost:8765/api/SatelliteTower - POST {"launchKey":"NARO50411131BIGBANG-2","controlStation":"하화마을","name":"bigBANgAfter"}
+* http://localhost:8765/api/SatelliteTower - DELETE - 500ERR - TODO
 
 #### CODE
 * JerseyJettyLauncher.java - jetty 서버를 설정하고 실행합니다.

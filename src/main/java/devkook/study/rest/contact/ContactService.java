@@ -38,7 +38,7 @@ public class ContactService {
     }
     
     @GET
-    @Produces("text/xml")
+    @Produces({ MediaType.APPLICATION_JSON })
     @Path("{email}")
     public ContactVo Get(@PathParam("email") String email){
         return dao.get(email);
@@ -52,7 +52,7 @@ public class ContactService {
     
     @DELETE
     @Path("{email}")
-    public void Dpdate(@PathParam("email") String email){
+    public void Delete(@PathParam("email") String email){
         dao.remove(email);
     }
 }

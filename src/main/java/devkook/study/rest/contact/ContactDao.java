@@ -5,7 +5,7 @@ import java.util.Hashtable;
 import java.util.List;
 
 public class ContactDao {
-    Hashtable<String, ContactVo> contacts = new Hashtable();
+    Hashtable<String, ContactVo> contacts = new Hashtable<String, ContactVo>();
     
     public ContactDao(){
         ContactVo vo = new ContactVo();

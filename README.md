@@ -26,4 +26,10 @@
 * UserCertificateResource.java - REST 서비스를 제공합니다. 
 * UserVO.java - JSON 으로 변환되어 서비스에서 오고가는 정보입니다.
 
+### 성능테스트
+* http://devkook.tumblr.com/post/67739398494/appdynamics-install 참고 AppDynamics 다운 및 설치
+* AppDynamics agent 폴더를 pom.xml 과 동등 레벨로 복사, 아래와 같이 지정하여 실행
+* java -javaagent:../adagent/javaagent.jar -Dport=8443 -jar restinjetty.jar
+* 모니터링뷰에 접속하여 config pojo (+) 하여 특정 클래스뫄 메소드 입력
+
 
